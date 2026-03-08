@@ -15,7 +15,7 @@ type Subscription struct {
 	Alias      string `yaml:"alias" json:"alias"`
 	URL        string `yaml:"url" json:"url"`
 	AutoUpdate bool   `yaml:"auto_update" json:"auto_update"`
-	Interval   int    `yaml:"interval" json:"interval"`               // 小时
+	Interval   int    `yaml:"interval" json:"interval"`                                             // 小时
 	Insecure   bool   `yaml:"insecure_skip_verify,omitempty" json:"insecure_skip_verify,omitempty"` // 忽略证书错误
 }
 
@@ -26,28 +26,28 @@ type Config struct {
 	LogFile       string         `yaml:"log_file" json:"log_file"`
 	LogLevel      string         `yaml:"log_level" json:"log_level"`
 	MaxLogSize    string         `yaml:"max_log_size" json:"max_log_size"`
-	Retry         int            `yaml:"retry,omitempty" json:"retry,omitempty"`         // 重试次数，默认 3 次
-	Timeout       int            `yaml:"timeout,omitempty" json:"timeout,omitempty"`     // 超时时间 (秒)，默认 30 秒
+	Retry         int            `yaml:"retry,omitempty" json:"retry,omitempty"`     // 重试次数，默认 3 次
+	Timeout       int            `yaml:"timeout,omitempty" json:"timeout,omitempty"` // 超时时间 (秒)，默认 30 秒
 	RestartCmd    string         `yaml:"restart_command,omitempty" json:"restart_command,omitempty"`
 	Subscriptions []Subscription `yaml:"subscriptions" json:"subscriptions"`
 }
 
 // MihomoConfig Mihomo 配置文件结构
 type MihomoConfig struct {
-	Proxies          []any     `yaml:"proxies" json:"proxies"`
-	ProxyGroups      []any     `yaml:"proxy-groups" json:"proxy-groups"`
-	Rules            []any     `yaml:"rules" json:"rules"`
-	Port             *int              `yaml:"port,omitempty" json:"port,omitempty"`
-	SocksPort        *int              `yaml:"socks-port,omitempty" json:"socks-port,omitempty"`
-	AllowLan         *bool             `yaml:"allow-lan,omitempty" json:"allow-lan,omitempty"`
-	Mode             string            `yaml:"mode,omitempty" json:"mode,omitempty"`
-	LogLevel         string            `yaml:"log-level,omitempty" json:"log-level,omitempty"`
-	ExternalController string          `yaml:"external-controller,omitempty" json:"external-controller,omitempty"`
-	Secret           string            `yaml:"secret,omitempty" json:"secret,omitempty"`
-	GeodataMode      *bool             `yaml:"geodata-mode,omitempty" json:"geodata-mode,omitempty"`
-	GeoxURL          map[string]string `yaml:"geox-url,omitempty" json:"geox-url,omitempty"`
-	DNS              any         `yaml:"dns,omitempty" json:"dns,omitempty"`
-	UpdateTime       string            `yaml:"-" json:"-"`
+	Proxies            []any             `yaml:"proxies" json:"proxies"`
+	ProxyGroups        []any             `yaml:"proxy-groups" json:"proxy-groups"`
+	Rules              []any             `yaml:"rules" json:"rules"`
+	Port               *int              `yaml:"port,omitempty" json:"port,omitempty"`
+	SocksPort          *int              `yaml:"socks-port,omitempty" json:"socks-port,omitempty"`
+	AllowLan           *bool             `yaml:"allow-lan,omitempty" json:"allow-lan,omitempty"`
+	Mode               string            `yaml:"mode,omitempty" json:"mode,omitempty"`
+	LogLevel           string            `yaml:"log-level,omitempty" json:"log-level,omitempty"`
+	ExternalController string            `yaml:"external-controller,omitempty" json:"external-controller,omitempty"`
+	Secret             string            `yaml:"secret,omitempty" json:"secret,omitempty"`
+	GeodataMode        *bool             `yaml:"geodata-mode,omitempty" json:"geodata-mode,omitempty"`
+	GeoxURL            map[string]string `yaml:"geox-url,omitempty" json:"geox-url,omitempty"`
+	DNS                any               `yaml:"dns,omitempty" json:"dns,omitempty"`
+	UpdateTime         string            `yaml:"-" json:"-"`
 }
 
 // Validate 验证订阅配置是否有效

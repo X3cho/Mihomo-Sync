@@ -328,17 +328,6 @@ func listSubscriptions(cfg *config.Config, logger *util.Logger) {
 	}
 }
 
-// listSubscriptionsSimple 简洁列出订阅（不显示 URL）
-func listSubscriptionsSimple(cfg *config.Config, logger *util.Logger) {
-	for i, sub := range cfg.Subscriptions {
-		status := "✗"
-		if sub.AutoUpdate {
-			status = "✓"
-		}
-		logger.Info("%d.%-8s 每%-2d小时   自动更新：%s", i+1, sub.Alias, sub.Interval, status)
-	}
-}
-
 // listSubscriptionsInteractive 交互式列出订阅并让用户选择
 // 返回选择的订阅和是否成功选择
 func listSubscriptionsInteractive(cfg *config.Config, logger *util.Logger) (*config.Subscription, bool) {
