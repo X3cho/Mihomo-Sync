@@ -25,8 +25,6 @@ Mihomo (Clash Meta) 订阅配置管理工具，支持多订阅、定时更新、
 ### 使用 Makefile 编译
 
 ```bash
-cd /data/Mihomo-sync-go
-
 # 编译当前平台
 make build
 
@@ -40,7 +38,6 @@ make build VERSION=1.0.0
 ### 使用 Go 直接编译
 
 ```bash
-cd /data/Mihomo-sync-go
 go build -o mihomo-sync
 ```
 
@@ -134,7 +131,7 @@ subscriptions:
 | `-s, --select ALIAS` | 指定订阅别名（只更新该订阅） |
 | `-t, --target PATH` | 软链接目标目录 |
 | `-c, --config PATH` | 配置文件路径 |
-| `-d, --base-dir PATH` | 脚本所在目录（默认 /data/Mihomo-sync-go） |
+| `-d, --base-dir PATH` | 脚本所在目录 |
 | `--all` | 更新所有订阅到 configs 目录 |
 | `--no-crontab` | 不设置定时任务 |
 | `--template PATH` | 配置模板路径（默认 template.yaml） |
