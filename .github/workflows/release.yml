@@ -81,7 +81,7 @@ jobs:
           body: |
             ## 更新内容
 
-            请查看 [CHANGELOG](https://github.com/${{ github.repository }}/releases) 获取详细信息。
+            请查看 [CHANGELOG](https://github.com/${{ github.repository }}/CHANGELOG.md) 获取详细信息。
 
             ## 文件说明
 
