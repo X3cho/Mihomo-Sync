@@ -92,11 +92,8 @@ func SaveMihomoConfig(config *MihomoConfig, outputPath string) error {
 		}
 	}
 
-	encoder := yaml.NewEncoder(file)
-	defer encoder.Close()
-
-	encoder.SetIndent(2)
-	if err := encoder.Encode(config); err != nil {
+	// 按顺序编码 YAML（先其他配置，最后 proxies, proxy-groups, rules）
+	if err := MarshalYAMLWithOrder(file, config); err != nil {
 		return fmt.Errorf("编码 YAML 失败：%w", err)
 	}
 
